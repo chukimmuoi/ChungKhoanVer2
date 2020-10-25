@@ -30,6 +30,8 @@ def get_json_string(name_code):
     if len(content_list) >= 2:
         json_string_list = content_list[1].split(END_JSON_VALUES)
         json_string = json.loads(json_string_list[0])
+        if json_string == '':
+            raise Exception('Not find json string of ' + name_code)
     else:
         raise Exception('Not find json string of ' + name_code)
 
@@ -82,7 +84,7 @@ def mining_data_follow_code_file(path):
         except Exception as error:
             failed += 1
             print('index = {}, code name = {}, error = {}'.format(index, code, error))
-    print('passed = {}, failed = {}'.format(passed, failed))
+    print('passed = {}, failed = {}'.format(passed, failed)) # passed = 1344, failed = 607
 
 
 def convert_csv_to_pandas(path):
