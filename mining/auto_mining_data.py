@@ -70,7 +70,7 @@ def create_directory(directory):
 
 def mining_data_follow_code_file(path):
     passed = 0
-    fail = 0
+    failed = 0
 
     data_frame = convert_csv_to_pandas(path)
     for index, row in data_frame.iterrows():
@@ -80,8 +80,9 @@ def mining_data_follow_code_file(path):
             passed += 1
             print('index = {}, code name = {}'.format(index, code))
         except Exception as error:
-            fail += 1
+            failed += 1
             print('index = {}, code name = {}, error = {}'.format(index, code, error))
+    print('passed = {}, failed = {}'.format(passed, failed))
 
 
 def convert_csv_to_pandas(path):
