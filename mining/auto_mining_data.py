@@ -84,7 +84,7 @@ def mining_data_follow_code_file(path):
         except Exception as error:
             failed += 1
             print('index = {}, code name = {}, error = {}'.format(index, code, error))
-    print('passed = {}, failed = {}'.format(passed, failed)) # passed = 1344, failed = 607
+    print('passed = {}, failed = {}'.format(passed, failed))  # passed = 1344, failed = 607
 
 
 def convert_csv_to_pandas(path):
