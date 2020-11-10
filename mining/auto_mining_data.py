@@ -4,6 +4,8 @@ import requests
 import json
 from pathlib import Path
 
+from utils.utils import convert_csv_to_pandas, TRANS_DATE_COLUMN, CODE_COLUMN
+
 DIRECTORY_NAME_CSV_DEFAULT = 'data'
 
 START_JSON_VALUES = 'drawChartForFirstTime('
@@ -11,9 +13,6 @@ END_JSON_VALUES = ');'
 
 URL_FORMAT = 'https://www.vndirect.com.vn/portal/bieu-do-ky-thuat/{}.shtml'
 DATE_FORMAT = '%d/%m/%Y'
-
-TRANS_DATE_COLUMN = 'transDate'
-CODE_COLUMN = 'code'
 
 
 def mining_data_follow_code_name(code_name, out_directory=DIRECTORY_NAME_CSV_DEFAULT):
@@ -87,12 +86,7 @@ def mining_data_follow_code_file(path):
     print('passed = {}, failed = {}'.format(passed, failed))  # passed = 1344, failed = 607
 
 
-def convert_csv_to_pandas(path):
-    data_frame = pandas.read_csv(path)
-
-    return data_frame
-
-
-mining_data_follow_code_file('code/code.csv')
+# mining_data_follow_code_name('MWG')
+# mining_data_follow_code_file('code/code.csv')
 
 
