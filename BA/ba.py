@@ -66,7 +66,7 @@ def calculator_tssl_f_code(df_out,
                     },
                     ignore_index=True
                 )
-                print('code = {}, n = {}, pv = {}, fv = {}, r = {}'.format(code, n, pv, fv, r))
+                print('{}'.format(code))
 
     return df_out
 
