@@ -87,4 +87,4 @@ def tssl_f_year(path, kyvong_percent, limit_min_chu_ky, day_not_work_percent):
                   .format(kyvong_percent, limit_min_chu_ky, day_not_work_percent))
 
 
-tssl_f_year('../mining/code/code.csv', 20, 5, 0.2)
+tssl_f_year('../mining/code/code.csv', 15, 5, 0.2)
